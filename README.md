@@ -1,6 +1,6 @@
 # Button App
 
-An app displaying info about different repos on Github depending on the counter. Built with React and styled with React-JSS.
+An app displaying info about cool repos on Github depending on the counter. Built with React and styled with React-JSS.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
