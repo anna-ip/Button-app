@@ -4,6 +4,11 @@ An app displaying info about cool repos on Github depending on the counter. Buil
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Next step
+  * Refactor code move the fetch function into it's own hook or use React-query. Move each functions into its own files for easier testing later.
+  * Work on styling, add themes for less repetetive code.
+  * Add tests 
+
 ## Technologies used
   * React
   * React-JSS
