@@ -17,7 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 https://button-app-anna-almestal.netlify.app
   
   
-#### Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
