@@ -5,7 +5,7 @@ An app displaying info about cool repos on Github depending on the counter. Buil
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Technologies used
-### React
+  * React
   * React-JSS
   
 ## Deployed version
