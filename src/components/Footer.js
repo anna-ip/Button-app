@@ -6,10 +6,9 @@ const useStyles = createUseStyles({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    position: "absolute",
-    bottom: 0,
     width: "100%",
     height: 100,
+    background: "#FCF1D3",
   },
   footerText: {
     fontFamily: "Molengo, sans-serif",

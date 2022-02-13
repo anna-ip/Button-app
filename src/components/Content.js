@@ -7,12 +7,12 @@ const FetchContent = () => {
   const [repositoryName, setRepositoryName] = useState(repos[0]);
   const [count, setCount] = useState(0);
   const [data, setData] = useState();
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
   const handleDecrease = () => {
     if (count === 0) {
-      console.log("you reached 0, try increment");
+      console.log("You reached 0, try increment");
       return;
     }
     setCount(count - 1);
@@ -20,7 +20,7 @@ const FetchContent = () => {
 
   const handleIncrease = () => {
     if (count === repos.length - 1) {
-      console.log("You reached the top limit, try decrement");
+      console.log("You reached no 7, try decrement");
       return;
     }
     setCount(count + 1);
@@ -39,12 +39,15 @@ const FetchContent = () => {
   }, [count]);
 
   useEffect(() => {
-    setLoading(true);
-    fetch(`https://api.github.com/repos/${repositoryName}`)
-      .then((res) => res.json())
-      .then((json) => setData(json))
-      .catch((error) => setError(error));
-    setLoading(false);
+    const fetchData = async () => {
+      setIsLoading(true);
+      await fetch(`https://api.github.com/repos/${repositoryName}`)
+        .then((res) => res.json())
+        .then((json) => setData(json))
+        .catch((error) => setError(error));
+      setIsLoading(false);
+    };
+    fetchData();
   }, [repositoryName]);
 
   return (
@@ -54,7 +57,7 @@ const FetchContent = () => {
         handleIncrease={() => handleIncrease()}
         count={count}
       />
-      {loading ? <p>Loading...</p> : <RepoInfo data={data} />}
+      <RepoInfo data={data} isLoading={isLoading} />
       {error && console.log(error)}
     </>
   );

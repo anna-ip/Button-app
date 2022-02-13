@@ -11,24 +11,25 @@ const useStyles = createUseStyles({
     justifyContent: "center",
     alignSelf: "center",
     background: "#293282",
-    minHeight: 300,
+    minHeight: 450,
     width: "100%",
 
     "@media (min-width: 768px)": {
       background: "#FCF1D3",
-      margin: {
+      width: "unset",
+      padding: {
         top: 10,
         right: 25,
-        bottom: 10,
+        bottom: 0,
         left: 25,
       },
     },
     "@media (min-width: 1024px)": {
       maxWidth: 1100,
-      margin: {
+      padding: {
         top: 10,
         right: "10rem",
-        bottom: 10,
+        bottom: 0,
         left: "10rem",
       },
     },
@@ -91,17 +92,23 @@ const useStyles = createUseStyles({
 
 const RepoInformation = (props) => {
   const classes = useStyles(props);
-  const { data } = props;
 
   return (
     <div className={classes.container}>
-      {data?.message && <p className={classes.description}>{data?.message}</p>}
-      <h2 className={classes.name}>{data?.full_name}</h2>
-
-      <p className={classes.description}>{data?.description}</p>
-      <p className={classes.stargazersCount}>
-        <svg className={classes.star}>{<Star />}</svg> {data?.stargazers_count}
-      </p>
+      {props.isLoading ? (
+        <p className={classes.name}>Loading....</p>
+      ) : props.data?.message ? (
+        <p className={classes.description}>API limit exceeded</p>
+      ) : (
+        <>
+          <h2 className={classes.name}>{props.data?.full_name}</h2>
+          <p className={classes.description}>{props.data?.description}</p>
+          <p className={classes.stargazersCount}>
+            <svg className={classes.star}>{<Star />}</svg>
+            {props.data?.stargazers_count}
+          </p>
+        </>
+      )}
     </div>
   );
 };

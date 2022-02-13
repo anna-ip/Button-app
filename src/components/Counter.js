@@ -11,7 +11,7 @@ const useStyles = createUseStyles({
     alignItems: "center",
     justifyContent: "center",
     background: "#EFCEE3",
-    height: 100,
+    minHeight: 150,
 
     "@media (min-width: 768px)": {
       height: 150,

@@ -10,7 +10,6 @@ const useStyles = createUseStyles({
     flexDirection: "column",
     margin: 0,
     background: "#FCF1D3",
-    height: "100vh",
   },
 });
 
