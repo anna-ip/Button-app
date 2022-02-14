@@ -96,9 +96,9 @@ const RepoInformation = (props) => {
   return (
     <div className={classes.container}>
       {props.isLoading ? (
-        <p className={classes.name}>Loading....</p>
+        <p className={classes.description}>Loading....</p>
       ) : props.data?.message ? (
-        <p className={classes.description}>API limit exceeded</p>
+        <p className={classes.description}>{props.data?.message}</p>
       ) : (
         <>
           <h2 className={classes.name}>{props.data?.full_name}</h2>
